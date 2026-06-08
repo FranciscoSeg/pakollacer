@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="galeria.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="one-navbar navbar-default bg-4">
+            <div style="max-width: 40%; height: 10%; text-align: center;">
+
+                <div class="one-navbar collapse navbar-collapse" id="myNavbar">
+                    <ul class="one-navbar navbar-nav navbar-right">
+                        <li><a href="/index.html">Volver</a></li>
+                        <li class="one-dropdown">
+                            <a class="one-dropbtn">Obras</a>
+                            <div class="one-dropdown-content">
+                                <a href="/inicios.html">Los inicios</a>
+                                <a href="/constructivismo.html">Constructivismo</a>
+                                <a href="/mujeres.html">Mujeres</a>
+                                <a href="/arbol.html">Árbol</a>
+                                <a href="/grabados.html">Grabados</a>
+                                <a href="/piezasmetal.html">Piezas de metal</a>
+                                <a href="/otras.html">Otras obras</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="gallery">
+        <!-- Miniaturas -->
+        <a href="#img1"><img src="media/4. Grabados/1.jpg" alt="Foto 1"></a>
+        <a href="#img2"><img src="media/4. Grabados/2.jpg" alt="Foto 2"></a>
+        <a href="#img3"><img src="media/4. Grabados/3.jpg" alt="Foto 3"></a>
+        <a href="#img4"><img src="media/4. Grabados/4.jpg" alt="Foto 4"></a>
+        <a href="#img5"><img src="media/4. Grabados/5.jpg" alt="Foto 5"></a>
+
+    </div>
+
+    <!-- Contenedores Lightbox -->
+    <div class="lightbox" id="img1">
+        <a href="#" class="close">&times;</a>
+        <a href="#img5" class="nav prev">&#10094;</a>
+        <div class="content">
+            <img src="media/4. Grabados/1.jpg" alt="Foto 1">
+            <p class="caption">Título imagen 1</p>
+        </div>
+        <a href="#img2" class="nav next">&#10095;</a>
+    </div>
+    <div class="lightbox" id="img2">
+        <a href="#" class="close">&times;</a>
+        <a href="#img1" class="nav prev">&#10094;</a>
+        <div class="content">
+            <img src="media/4. Grabados/2.jpg" alt="Foto 2">
+            <p class="caption">Título imagen 2</p>
+        </div>
+        <a href="#img3" class="nav next">&#10095;</a>
+    </div>
+    <div class="lightbox" id="img3">
+        <a href="#" class="close">&times;</a>
+        <a href="#img2" class="nav prev">&#10094;</a>
+        <div class="content">
+            <img src="media/4. Grabados/3.jpg" alt="Foto 3">
+            <p class="caption">Título imagen 3</p>
+        </div>
+        <a href="#img4" class="nav next">&#10095;</a>
+    </div>
+    <div class="lightbox" id="img4">
+        <a href="#" class="close">&times;</a>
+        <a href="#img3" class="nav prev">&#10094;</a>
+        <div class="content">
+            <img src="media/4. Grabados/4.jpg" alt="Foto 4">
+            <p class="caption">Título imagen 4</p>
+        </div>
+        <a href="#img5" class="nav next">&#10095;</a>
+    </div>
+    <div class="lightbox" id="img5">
+        <a href="#" class="close">&times;</a>
+        <a href="#img4" class="nav prev">&#10094;</a>
+        <div class="content">
+            <img src="media/4. Grabados/5.jpg" alt="Foto 5">
+            <p class="caption">Título imagen 5</p>
+        </div>
+        <a href="#img1" class="nav next">&#10095;</a>
+    </div>
+
+</body>
+
+</html>
