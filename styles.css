@@ -1,0 +1,408 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 70px; /* Evita que el menú fijo tape el contenido superior */
+}
+
+/* Ajuste específico para la página de inicio para que la cabecera quede arriba del todo */
+#inicio {
+    margin-top: -70px;
+}
+
+/* Menú de Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #888;
+}
+
+/* Menú Desplegable (Dropdown) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Cabecera Pantalla Completa (Hero) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('media/Index/2.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #eee;
+}
+
+/* Sección Galería */
+.galeria-container {
+    padding: 60px 50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-container h2 {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Sección Biografía */
+.biografia-seccion {
+    padding: 100px 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.biografia-seccion h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.biografia-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.biografia-contenido p {
+    margin-bottom: 25px;
+}
+
+/* Modal / Visor de imágenes */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+    animation: zoom 0.25s ease-out;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.95); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #bbb;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cerrar:hover {
+    color: #fff;
+}
+
+/* Nuevos estilos para las flechas del Modal */
+.modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 2100;
+}
+
+.flecha:hover {
+    color: #fff;
+}
+
+.izquierda {
+    left: 40px;
+}
+
+.izquierda:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.derecha {
+    right: 40px;
+}
+
+.derecha:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Ocultar flechas en pantallas muy pequeñas para no pisar la imagen */
+@media (max-width: 600px) {
+    .flecha {
+        font-size: 35px;
+        padding: 5px;
+    }
+    .izquierda { left: 10px; }
+    .derecha { right: 10px; }
+}
+
+
+
+ .bio-container {
+     max-width: 75%;
+     margin: 0 auto;
+     background: #ffffff;
+     padding: 2.5rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+ }
+
+ h1 {
+     color: white;
+     margin-bottom: 3rem;
+     text-align: center;
+     font-size: 2.2rem;
+ }
+
+ /* --- BLOQUES LATERALES --- */
+ .bio-block {
+     display: flex;
+     align-items: center;
+     gap: 3rem;
+     /* Espaciado amplio entre el bloque y la imagen pequeña */
+     border-bottom: 1px solid #e2e8f0;
+     padding-bottom: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
+
+ .bio-block:nth-of-type(even) {
+     flex-direction: row-reverse;
+ }
+
+ .bio-text {
+     flex: 2;
+     /* El texto ocupa el doble de espacio que la imagen */
+     text-align: justify;
+ }
+
+ .bio-text p {
+     margin-bottom: 1rem;
+     text-align: justify;
+ }
+
+ .bio-image-wrapper {
+     flex: 1;
+     /* Columna más estrecha para la foto */
+     display: flex;
+     justify-content: center;
+ }
+
+ .bio-image {
+     width: 100%;
+     max-width: 280px;
+     /* TAMAÑO REDUCIDO (Antes 400px) */
+     height: auto;
+     border-radius: 6px;
+     object-fit: cover;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ }
+
+ /* --- BLOQUE CENTRAL REDUCIDO --- */
+ .bio-block-center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom: 1px solid #e2e8f0;
+     padding-bottom: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
+
+ .bio-image-center {
+     width: 40%;
+     /* TAMAÑO REDUCIDO (Antes 60% del espacio) */
+     max-width: 350px;
+     /* Límite estricto para pantallas grandes */
+     height: auto;
+     border-radius: 6px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ }
+
+ /* Eliminar borde final */
+ .bio-container> :last-child {
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+ }
+
+ /* --- Diseño Responsive (Móviles) --- */
+ @media (max-width: 768px) {
+
+     .bio-block,
+     .bio-block:nth-of-type(even) {
+         flex-direction: column;
+         gap: 1.2rem;
+         padding-bottom: 1rem;
+         margin-bottom: 1rem;
+     }
+
+     .bio-image-wrapper {
+         /*order: -1; */
+         width: 100%;
+     }
+
+     .bio-image {
+         max-width: 240px;
+         /* Ligeramente más pequeña en móviles */
+     }
+
+     .bio-block-center {
+         padding-bottom: 1rem;
+         margin-bottom: 1rem;
+     }
+
+     .bio-image-center {
+         width: 60%;
+         /* En móviles no se achica tanto para mantener legibilidad visual */
+         max-width: 280px;
+     }
+ }

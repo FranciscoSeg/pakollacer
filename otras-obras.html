@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras - Otras Obras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación Fijo (Se mantiene idéntico en todas las páginas) -->
+    <nav class="navbar">
+        <div class="nav-logo"><a href="index.html">Pako Llácer</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Obras ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="inicios.html">Los inicios</a></li>
+                    <li><a href="constructivismo.html">Constructivismo</a></li>
+                    <li><a href="mujeres.html">Mujeres</a></li>
+                    <li><a href="arbol.html">Árbol</a></li>
+                    <li><a href="grabados.html">Grabados</a></li>
+                    <li><a href="piezas-de-metal.html">Piezas de metal</a></li>
+                    <li><a href="otras-obras.html">Otras obras</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#bio-container">Biografía</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Galería de Fotos -->
+    <section class="galeria-container">
+        <!-- Modifica este título en cada archivo correspondiente -->
+        <h2>Otras Obras</h2> 
+        
+        <div class="grid-galeria">
+            <!-- Reemplaza el 'src' por tus fotos locales cuando las tengas -->
+            <img src="media/6. Otras Obras/1.jpg" alt="Obra 1" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/2.jpg" alt="Obra 2" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/3.jpg" alt="Obra 3" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/4.jpg" alt="Obra 4" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/5.jpg" alt="Obra 5" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/6.JPG" alt="Obra 6" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/7.jpg" alt="Obra 7" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/8.jpeg" alt="Obra 8" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/9.jpg" alt="Obra 9" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/10.jpg" alt="Obra 10" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/11.jpg" alt="Obra 11" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/12.jpg" alt="Obra 12" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/13.jpeg" alt="Obra 13" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/14.jpeg" alt="Obra 14" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/15.jpeg" alt="Obra 15" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/16.jpeg" alt="Obra 16" onclick="abrirModal(this.src)">
+            <img src="media/6. Otras Obras/17.jpeg" alt="Obra 17" onclick="abrirModal(this.src)">
+        </div>
+    </section>
+
+    <!-- Ventana Modal para Agrandar Fotos con Flechas -->
+    <div id="modal-visor" class="modal">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        
+        <!-- Flechas de navegación -->
+        <span class="flecha izquierda" onclick="cambiarFoto(-1)">&#10094;</span>
+        <span class="flecha derecha" onclick="cambiarFoto(1)">&#10095;</span>
+        
+        <!-- El contenedor cierra el modal si haces click fuera de la foto -->
+        <div class="modal-bg" onclick="cerrarModal()"></div>
+        <img class="modal-contenido" id="imagen-ampliada">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
